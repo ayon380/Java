@@ -16,7 +16,116 @@
     13. Java is a distributed language.
     
     **Features of Java**
+
+
+    -->Super Keyword--
+    The super keyword in Java is a reference variable that is used to refer parent class objects. The keyword "super" came into the picture with the concept of Inheritance. It is majorly used in the following contexts:
+    1. Use of super with variables: This scenario occurs when a derived class and base class has same data members. In order to access the data members of base class, super keyword is used.
+    2. Use of super with methods: When a derived class overrides a method of base class, we use super keyword to call methods from base class.
+    3. Use of super with constructors: When a derived class and base class have same constructors, we use super keyword to call constructors from base class.
+
+
+    -->this Keyword--
+    The this keyword in Java is a reference to the current object. The keyword "this" was introduced with the concept of oops. It is majorly used in the following contexts:
+    1. Use of this as a reference to current class instance variables.
+    2. Use of this() to call current class constructors.
+    3. Use of this keyword as an argument in the method call.
+    4. Use of this keyword as an argument in the constructor call.
+    5. Use of this keyword to return the current class instance.
+
+
+    -->Static Keyword--
+    The static keyword in Java is used for memory management mainly. We can apply static keyword with variables, methods, blocks and nested class. The static keyword belongs to the class than an instance of the class.
+    1. The static can be:
+        a. Variable (also known as a class variable)
+        b. Method (also known as a class method)
+        c. Block
+        d. Nested class
+    2. The static keyword is used to:
+        a. Create a variable that will be common to all objects of the same class.
+        b. Create methods that will be called without creating an object of the class.
+        c. To refer to the common property of all objects (which is not unique for each object), for example, the company name of employees, college name of students, etc.
+        d. For memory management.
+    3. The static keyword can be used with the following:
+        a. Variables: The static variables are used to refer to the common property of all objects (which is not unique for each object), for example, the company name of employees, college name of students, etc.
+        b. Methods: The static methods can be used to refer to the common property of all objects (which is not unique for each object), for example, the company name of employees, college name of students, etc.
+        c. Blocks: The static blocks are used to initialize the static variables. The static blocks are executed before the constructors.
+        d. Nested class: The static nested class cannot access non-static data members and methods. It can be accessed by outer class name.
+
+
+    -->Final Keyword--
+    The final keyword in java is used to restrict the user. final states that the value can't be changed.
+    1. The final keyword can be used with the following:
+        a. Variables: The final variable can't be changed once assigned. The final variable can be a primitive data type or a reference.
+        b. Methods: The final method can't be overridden by the inheriting class.
+        c. Classes: The final class can't be inherited.
+    2. The final keyword can be applied with the variables, a final variable that have no value it is called blank final variable or uninitialized final variable. It can be initialized in the constructor only. The blank final variable can be static also which will be initialized in the static block only.
+
     
+    -->Abstract Class--
+    A class which is declared with the abstract keyword is known as an abstract class in Java. It can have abstract and non-abstract methods (method with the body). Before learning the Java abstract class, let's understand the abstraction in Java first. Abstraction is a process of hiding the implementation details and showing only functionality to the user. There are two ways to achieve abstraction in java - abstract class (0 to 100%) and interface (100%). An abstract class can have an abstract method without a body and it can have methods with the body as well. But, in the case of an interface, all the methods must be abstract. Since Java 8, we can have default and static methods in an interface. An abstract class is mostly used to provide a base for subclasses to extend and implement the abstract methods and override or use the implemented methods in abstract class itself. An abstract class can never be instantiated. 
+    Syntax--
+    abstract class className{  
+        //methods  
+    }
+
+
+    -->Interface--
+    An interface in Java is a blueprint of a class. It has static constants and abstract methods only. The interface in Java is a mechanism to achieve abstraction. There can be only abstract methods in the Java interface, not method body. It is used to achieve abstraction and multiple inheritance in Java. In other words, you can say that interfaces can have abstract methods and variables. It cannot have a method body. Java Interface also represents the IS-A relationship. It cannot be instantiated just like the abstract class. Since Java 8, we can have default and static methods in an interface. Since Java 9, we can have private methods in an interface. Since Java 8, we can have private and static methods in an interface also. For now, let's understand the basic difference between abstract class and interface. The interface is used to achieve abstraction and multiple inheritance in Java. It cannot have a method body. The interface is declared using the interface keyword. It cannot be instantiated just like the abstract class. Since Java 8, we can have default and static methods in an interface. Since Java 9, we can have private methods in an interface. Since Java 8, we can have private and static methods in an interface also. An abstract class can have an abstract and non-abstract method. It can be instantiated just like the normal class. The abstract class is declared using the abstract keyword. It can have a method body (non-abstract methods). It can have a constructor and static method also. It can have final methods which will force the subclass not to change the body of the method. It can have final variables. It can have instance variables. It can provide the implementation of the interface. The abstract keyword is used to declare the abstract class.
+    Syntax--
+    interface <interface_name>{  
+        //declare constant fields  
+        //declare methods that abstract by default.  
+    }
+
+
+    -->Exception Handling--
+    An exception is an unwanted or unexpected event, which occurs during the execution of a program i.e at run time, that disrupts the normal flow of the program's instructions. In other words, an exception is a run-time error. Exception Handling is a mechanism to handle runtime errors such as ClassNotFoundException, IOException, SQLException, RemoteException, etc. In Java, an exception is an event that disrupts the normal flow of the program. It is an object which is thrown at runtime. The exception handling in Java is one of the powerful mechanisms to handle the runtime errors so that the normal flow of the application can be maintained. Exception Handling is mainly used to handle the checked exceptions. If there occurs any unchecked exception such as NullPointerException, it is programmers fault that he is not performing check up before the code being used. There are mainly two types of exceptions: checked and unchecked where error is considered as unchecked exception. The sun microsystem says there are three types of exceptions:
+    1. Checked Exception
+    2. Unchecked Exception
+    3. Error
+
+
+    --> throw keyword--
+    The Java throw keyword is used to explicitly throw an exception. We can throw either checked or uncheked exception in java by throw keyword. The throw keyword is mainly used to throw custom exception. We will see custom exceptions later. Let's see a simple example of throw keyword.
+    Example- 
+    class Test{  
+        static void validate(int age){  
+            if(age<18)  
+            throw new ArithmeticException("not valid");  
+            else  
+            System.out.println("welcome to vote");  
+        }  
+        public static void main(String args[]){  
+            validate(13);  
+            System.out.println("rest of the code...");  
+        }  
+    }
+
+
+    -->throws keyword--
+    The Java throws keyword is used to declare an exception. it is used in function declaration. If we are calling a method that declares an exception, we must either caught or declare the exception. The throws keyword is used to declare an exception. It gives an information to the programmer that there may occur an exception so it is better for the programmer to provide the exception handling code so that normal flow can be maintained.
+
+
+    -->finally block--
+    The finally block is a block that is used to execute important code such as closing connection, stream etc. Java finally block is always executed whether exception is handled or not. Java finally block follows try or catch block. The finally block will not be executed if program exits(either by calling System.exit() or by causing a fatal error that causes the process to abort).
+
+
+    -->catch block--
+    The catch block is used to handle the exception. It must be used after the try block only. You can use multiple catch block with a single try. The catch block must be used after the try block only. You can use multiple catch block with a single try.
+
+
+    -->Enumeration--
+    The enumeration in Java is one of the types of data structure which is used to store the constants. In other words, enum is a keyword, a feature which is used to represent fixed number of well-known values in Java, For example, Number of days in Week, Number of planets in Solar system etc. It is a special type of class that contains only static constants. It is mainly used to define the collection of constants, such as the days of the week, the months in a year etc. The enum constants are implicitly static and final .
+    Example-
+    enum Season { WINTER, SPRING, SUMMER, FALL }
+    class EnumExample1{
+        public static void main(String[] args) {
+            for (Season s : Season.values())
+                System.out.println(s);
+        }
+    }
+
 
     -> Threads--
 
@@ -100,13 +209,10 @@
     The automatic conversion of primitive data type into its corresponding wrapper class is known as autoboxing. For example – conversion of int to Integer, long to Long, double to Double etc.
     ex- Integer i = 10; //autoboxing
 
-    AutoUnBoxing--
-    The automatic conversion of wrapper class into its corresponding primitive type is known as unboxing. For example – conversion of Integer to int, Long to long, Double to double etc.
-    ex- Integer i = new Integer(10); //unboxing
+    AutoUnBoxing-- The automatic conversion of wrapper class into its corresponding primitive type is known as unboxing.For example – conversion of Integer to int, Long to long, Double to double etc.ex - Integer i = new Integer(10); // unboxing
 
-    String Class--
-    The String class represents character strings. All string literals in Java programs, such as "abc", are implemented as instances of this class. Strings are constant; their values cannot be changed after they are created. String buffers support mutable strings. Because String objects are immutable they can be shared. For example:
-    String str = "abc";
+    String Class-- The String class represents character strings.All string literals in Java programs, such as "abc", are implemented as instances of this class.Strings are constant;
+    their values cannot be changed after they are created.String buffers support mutable strings.Because String objects are immutable they can be shared.For example : String str = "abc";
     Functions-- 1. charAt() - This method returns the character at the specified index .2. compareTo() - This method compares two strings lexicographically .3. concat() - This method concatenates one string to the end of another string .4. contains() - This method searches the sequence of characters in this string .5. endsWith() - This method tests if this string ends with the specified suffix .6. equals() - This method compares this string to the specified object .7. equalsIgnoreCase() - This method compares this String to another String, ignoring case considerations .8. format() - This method returns a formatted string using the specified format string and arguments .9. getBytes() - This method encodes this String into a sequence of bytes using the platform's default charset.
 
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       StringBuffer Class-- StringBuffer class is used to create mutable(modifiable) string.The StringBuffer class in java is same as String class except it is mutable i.e.it can be changed.example:
@@ -444,6 +550,65 @@
     11. removeFirst() - This function is used to retrieve and remove the first element of the deque.
     12. removeLast() - This function is used to retrieve and remove the last element of the deque.
     
+    PriorityQueue--    
+    PriorityQueue is an unbounded queue based on a priority heap and the elements of the priority queue are ordered by default in natural order.
+    Functions--
+    1. add() - This function is used to insert an element in the priority queue.
+    2. offer() - This function is used to insert an element in the priority queue.
+    3. peek() - This function is used to view the head of queue without removing it. It returns Null if the queue is empty.
+    4. poll() - This function removes and returns the head of the queue. It returns null if the queue is empty.
+
+    Hashing--
+    Hashing is a technique that is used to uniquely identify a specific object from a group of similar objects. Some examples of how hashing is used in our lives include:
+    1. In universities, each student is assigned a unique roll number that can be used to retrieve information about them.
+
+    Set--
+    Set is an interface which extends Collection. It is an unordered collection of objects in which duplicate values cannot be stored. Basically, Set is implemented by HashSet, LinkedHashSet or TreeSet (sorted representation). Set has various methods to add, remove clear, size, etc to enhance the usage of this interface.
+    Functions--
+    1. add() - This function is used to add an element in the set.
+    2. addAll() - This function is used to add all the elements of a list to the set.
+    3. clear() - This function is used to remove all the elements from the set.
+    4. contains() - This function is used to check whether an element is present in the set or not. It returns True if the element is present and False if the element is not present.
+    5. containsAll() - This function is used to check whether all the elements of a Collection is present in the set or not. It returns True if the set contains all the elements and False if the set does not contain all the elements.
+
+    HashSet--
+    HashSet class implements Set Interface. It represents the collection that uses a hash table for storage. Hashing is used to store the elements in the HashSet. It contains unique items.
+    Functions--
+    1. add() - This function is used to add an element in the set.
+    2. addAll() - This function is used to add all the elements of a list to the set.
+    3. clear() - This function is used to remove all the elements from the set.
+    4. contains() - This function is used to check whether an element is present in the set or not. It returns True if the element is present and False if the element is not present.
+
+    TreeSet--
+    TreeSet implements the SortedSet interface so duplicate values are not allowed in TreeSet. TreeSet does not preserve the insertion order of elements but elements are sorted by keys. TreeSet does not allow to insert Heterogeneous objects. It will throw classCastException at Runtime if trying to add hetrogeneous objects.
+    
+    Comparable--
+    Comparable interface is used to order the objects of user-defined class. This interface is found in java.lang package and contains only one method named compareTo(Object). It provides a single sorting sequence only, i.e., you can sort the elements on the basis of single data member only. For example, it may be rollno, name, age or anything else.
+    Comparable provides compareTo() method to sort elements. Internally, it uses compareTo() method of String class to sort elements.
+
+    TreeMap--
+    TreeMap implements the SortedMap interface so duplicate values are not allowed in TreeMap. TreeMap does not preserve the insertion order of elements but elements are sorted by keys. TreeMap does not allow to insert Heterogeneous objects. It will throw classCastException at Runtime if trying to add hetrogeneous objects.
+    Functions--
+    1. put() - This method is used to insert a particular mapping of key-value pair into the map.
+    2. putAll() - This method is used to insert the specified map in the map.
+
+    HashMap--
+    HashMap implements the Map interface and extends AbstractMap class. It contains only unique elements. It may have one null key and multiple null values. It maintains no order.
+    Functions--
+    1. put() - This method is used to insert a particular mapping of key-value pair into the map.
+    2. putAll() - This method is used to insert the specified map in the map.
+    3. putIfAbsent() - This method inserts a mapping if the specified key is not already associated with a value or is mapped to null and returns null otherwise.
+    4. get() - This method returns the value for the specified key.
+    5. getOrDefault() - This method returns the value for the specified key if key is exists in the map otherwise it returns the specified default value.
+    6. remove() - This method removes the entry for the specified key only if it is currently mapped to the specified value.
+    7. replace() - This method replaces the entry for the specified key only if it is currently mapped to some value.
+
+    StringTokenizer--
+    StringTokenizer class in Java is used to break a string into tokens. StringTokenizer is a legacy class that is retained for compatibility reasons although its use is discouraged in new code. It is recommended that anyone seeking this functionality use the split method of String or the java.util.regex package instead.
+    Functions--
+    1. countTokens() - This method returns the total number of tokens.
+    2. hasMoreTokens() - This method checks if there are more tokens available.
+    3. nextToken() - This method returns the next token from the StringTokenizer object.
 
 
     JDBC--
