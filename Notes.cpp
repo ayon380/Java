@@ -65,41 +65,37 @@
     -->Abstract Class--
     A class which is declared with the abstract keyword is known as an abstract class in Java. It can have abstract and non-abstract methods (method with the body). Before learning the Java abstract class, let's understand the abstraction in Java first. Abstraction is a process of hiding the implementation details and showing only functionality to the user. There are two ways to achieve abstraction in java - abstract class (0 to 100%) and interface (100%). An abstract class can have an abstract method without a body and it can have methods with the body as well. But, in the case of an interface, all the methods must be abstract. Since Java 8, we can have default and static methods in an interface. An abstract class is mostly used to provide a base for subclasses to extend and implement the abstract methods and override or use the implemented methods in abstract class itself. An abstract class can never be instantiated. 
     Syntax--
-    abstract class className{  
-        //methods  
+    abstract class className
+    {
+        // methods
     }
 
-
-    -->Interface--
-    An interface in Java is a blueprint of a class. It has static constants and abstract methods only. The interface in Java is a mechanism to achieve abstraction. There can be only abstract methods in the Java interface, not method body. It is used to achieve abstraction and multiple inheritance in Java. In other words, you can say that interfaces can have abstract methods and variables. It cannot have a method body. Java Interface also represents the IS-A relationship. It cannot be instantiated just like the abstract class. Since Java 8, we can have default and static methods in an interface. Since Java 9, we can have private methods in an interface. Since Java 8, we can have private and static methods in an interface also. For now, let's understand the basic difference between abstract class and interface. The interface is used to achieve abstraction and multiple inheritance in Java. It cannot have a method body. The interface is declared using the interface keyword. It cannot be instantiated just like the abstract class. Since Java 8, we can have default and static methods in an interface. Since Java 9, we can have private methods in an interface. Since Java 8, we can have private and static methods in an interface also. An abstract class can have an abstract and non-abstract method. It can be instantiated just like the normal class. The abstract class is declared using the abstract keyword. It can have a method body (non-abstract methods). It can have a constructor and static method also. It can have final methods which will force the subclass not to change the body of the method. It can have final variables. It can have instance variables. It can provide the implementation of the interface. The abstract keyword is used to declare the abstract class.
-    Syntax--
-    interface <interface_name>{  
-        //declare constant fields  
-        //declare methods that abstract by default.  
+        -- > Interface-- An interface in Java is a blueprint of a class.It has static constants and abstract methods only.The interface in Java is a mechanism to achieve abstraction.There can be only abstract methods in the Java interface,
+        not method body.It is used to achieve abstraction and multiple inheritance in Java.In other words, you can say that interfaces can have abstract methods and variables.It cannot have a method body.Java Interface also represents the IS - A relationship.It cannot be instantiated just like the abstract class.Since Java 8, we can have default and static methods in an interface.Since Java 9, we can have private methods in an interface.Since Java 8, we can have private and static methods in an interface also.For now, let's understand the basic difference between abstract class and interface. The interface is used to achieve abstraction and multiple inheritance in Java. It cannot have a method body. The interface is declared using the interface keyword. It cannot be instantiated just like the abstract class. Since Java 8, we can have default and static methods in an interface. Since Java 9, we can have private methods in an interface. Since Java 8, we can have private and static methods in an interface also. An abstract class can have an abstract and non-abstract method. It can be instantiated just like the normal class. The abstract class is declared using the abstract keyword. It can have a method body (non-abstract methods). It can have a constructor and static method also. It can have final methods which will force the subclass not to change the body of the method. It can have final variables. It can have instance variables. It can provide the implementation of the interface. The abstract keyword is used to declare the abstract class. Syntax-- interface<interface_name> {
+        // declare constant fields
+        // declare methods that abstract by default.
     }
 
+            -- > Exception Handling-- An exception is an unwanted or
+        unexpected event,
+        which occurs during the execution of a program i.e at run time, that disrupts the normal flow of the program's instructions. In other words, an exception is a run-time error. Exception Handling is a mechanism to handle runtime errors such as ClassNotFoundException, IOException, SQLException, RemoteException, etc. In Java, an exception is an event that disrupts the normal flow of the program. It is an object which is thrown at runtime. The exception handling in Java is one of the powerful mechanisms to handle the runtime errors so that the normal flow of the application can be maintained. Exception Handling is mainly used to handle the checked exceptions. If there occurs any unchecked exception such as NullPointerException, it is programmers fault that he is not performing check up before the code being used. There are mainly two types of exceptions: checked and unchecked where error is considered as unchecked exception. The sun microsystem says there are three types of exceptions: 1. Checked Exception 2. Unchecked Exception 3. Error
 
-    -->Exception Handling--
-    An exception is an unwanted or unexpected event, which occurs during the execution of a program i.e at run time, that disrupts the normal flow of the program's instructions. In other words, an exception is a run-time error. Exception Handling is a mechanism to handle runtime errors such as ClassNotFoundException, IOException, SQLException, RemoteException, etc. In Java, an exception is an event that disrupts the normal flow of the program. It is an object which is thrown at runtime. The exception handling in Java is one of the powerful mechanisms to handle the runtime errors so that the normal flow of the application can be maintained. Exception Handling is mainly used to handle the checked exceptions. If there occurs any unchecked exception such as NullPointerException, it is programmers fault that he is not performing check up before the code being used. There are mainly two types of exceptions: checked and unchecked where error is considered as unchecked exception. The sun microsystem says there are three types of exceptions:
-    1. Checked Exception
-    2. Unchecked Exception
-    3. Error
-
-
-    --> throw keyword--
-    The Java throw keyword is used to explicitly throw an exception. We can throw either checked or uncheked exception in java by throw keyword. The throw keyword is mainly used to throw custom exception. We will see custom exceptions later. Let's see a simple example of throw keyword.
-    Example- 
-    class Test{  
-        static void validate(int age){  
-            if(age<18)  
-            throw new ArithmeticException("not valid");  
-            else  
-            System.out.println("welcome to vote");  
-        }  
-        public static void main(String args[]){  
-            validate(13);  
-            System.out.println("rest of the code...");  
-        }  
+                                                                                -- > throw keyword-- The Java throw keyword is used to explicitly throw an exception.We can throw either checked or
+uncheked exception in java by throw keyword.The throw keyword is mainly used to throw custom exception.We will see custom exceptions later.Let's see a simple example of throw keyword. Example - class Test
+    {
+        static void validate(int age)
+        {
+            if (age < 18)
+                throw new ArithmeticException("not valid");
+            else
+                System.out.println("welcome to vote");
+        }
+    public
+        static void main(String args[])
+        {
+            validate(13);
+            System.out.println("rest of the code...");
+        }
     }
 
 
@@ -119,8 +115,11 @@
     The enumeration in Java is one of the types of data structure which is used to store the constants. In other words, enum is a keyword, a feature which is used to represent fixed number of well-known values in Java, For example, Number of days in Week, Number of planets in Solar system etc. It is a special type of class that contains only static constants. It is mainly used to define the collection of constants, such as the days of the week, the months in a year etc. The enum constants are implicitly static and final .
     Example-
     enum Season { WINTER, SPRING, SUMMER, FALL }
-    class EnumExample1{
-        public static void main(String[] args) {
+    class EnumExample1
+    {
+    public
+        static void main(String[] args)
+        {
             for (Season s : Season.values())
                 System.out.println(s);
         }
@@ -151,7 +150,8 @@
     
     Thread Functions--
     1. start() - This method starts the execution of the thread. It calls the run() method of the thread internally.
-    2. run() - This method is called when a thread is in the active state. You need to override this method to specify the actions that the thread will perform.
+    2. run() - This method is called when a thread is in the active state. You need to override this 
+    method to specify the actions that the thread will perform.
     3. sleep() - This method causes the currently executing thread to sleep for the specified number of milliseconds.
     4. join() - This method waits for a thread to die. It causes the currently executing thread to wait until the thread on which it is called is dead.
     5. yield() - This method causes the currently executing thread to yield to any other threads of the same priority that are waiting to be scheduled.(increases the priority of the thread)
@@ -212,7 +212,8 @@
     AutoUnBoxing-- The automatic conversion of wrapper class into its corresponding primitive type is known as unboxing.For example – conversion of Integer to int, Long to long, Double to double etc.ex - Integer i = new Integer(10); // unboxing
 
     String Class-- The String class represents character strings.All string literals in Java programs, such as "abc", are implemented as instances of this class.Strings are constant;
-    their values cannot be changed after they are created.String buffers support mutable strings.Because String objects are immutable they can be shared.For example : String str = "abc";
+    their values cannot be changed after they are created.String buffers support mutable strings.Because String objects are immutable they can be shared.For example :
+    String str = "abc";
     Functions-- 1. charAt() - This method returns the character at the specified index .2. compareTo() - This method compares two strings lexicographically .3. concat() - This method concatenates one string to the end of another string .4. contains() - This method searches the sequence of characters in this string .5. endsWith() - This method tests if this string ends with the specified suffix .6. equals() - This method compares this string to the specified object .7. equalsIgnoreCase() - This method compares this String to another String, ignoring case considerations .8. format() - This method returns a formatted string using the specified format string and arguments .9. getBytes() - This method encodes this String into a sequence of bytes using the platform's default charset.
 
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       StringBuffer Class-- StringBuffer class is used to create mutable(modifiable) string.The StringBuffer class in java is same as String class except it is mutable i.e.it can be changed.example:
@@ -347,7 +348,7 @@
     1. read() - This method reads the next byte of data from the input stream.
     2. available() - This method returns the number of bytes that can be read from the input stream without blocking by the next caller of a method for this input stream.
     3. close() - This method closes the input stream and releases any system resources associated with the stream.
-
+..+++
     PipedOutputStream Class--
     The PipedOutputStream class is used to write the data to the pipe. The constructor of this class takes the piped input stream object as an argument.
     Functions--
@@ -628,4 +629,11 @@
     Foreign Key--
     A foreign key is a column or group of columns in a relational database table that provides a link between data in two tables. It acts as a cross-reference between tables because it references the primary key of another table, thereby establishing a link between them.
     
-    SQLite--
+    
+    AWT--
+    AWT stands for Abstract Window Toolkit. It is a platform dependent API for creating Graphical User Interface (GUI) for java programs. AWT is heavyweight i.e. its components uses the resources of OS. A Frame is a base window of AWT. The java.awt package provides classes for AWT api such as TextField, Label, TextArea, RadioButton, CheckBox, Choice, List etc.
+    
+
+    Swing--
+    Swing is a part of Java Foundation Classes (JFC) that is used to create window-based applications. It is built on the top of AWT (Abstract Windowing Toolkit) API and entirely written in java.
+

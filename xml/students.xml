@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students:student xmlns:students="http://www.example.com/students">
+    <students:name>John Doe</students:name>
+    <students:age>20</students:age>
+    <students:courses>
+        <students:course>Mathematics</students:course>
+        <students:course>Physics</students:course>
+        <students:course>Computer Science</students:course>
+    </students:courses>
+</students:student>
